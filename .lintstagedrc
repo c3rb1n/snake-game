@@ -1,0 +1,4 @@
+{
+    "*.{js,jsx,html,md}": "npx eslint --color",
+    "*.{css,scss}": "npx stylelint"
+}
