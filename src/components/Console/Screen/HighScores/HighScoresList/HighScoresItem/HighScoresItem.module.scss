@@ -1,0 +1,17 @@
+.item {
+    &__scoresBlock {
+        display: flex;
+        justify-content: space-between;
+        gap: 22px;
+    }
+
+    &__scores {
+        width: 112px;
+        text-align: right;
+    }
+
+    &__lvl {
+        width: 100px;
+        text-align: right;
+    }
+}

@@ -1,0 +1,14 @@
+.button {
+    width: 40px;
+    height: 40px;
+    color: var(--main-color);
+    background-color: var(--second-color);
+    cursor: pointer;
+    padding-left: 9px;
+    border: 1px solid var(--controls-border-color);
+
+    &:active {
+        color: var(--main-hover-color);
+        background-color: var(--second-hover-color);
+    }
+}
