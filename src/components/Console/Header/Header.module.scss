@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__line {
+        border: none;
+        flex-grow: 1;
+        height: 2px;
+        background-color: var(--main-accent-color);
+    }
+
+    &__title {
+        width: 160px;
+        color: var(--main-color);
+        font-size: 16px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,34 @@
+.controls {
+    display: grid;
+    grid-template: ". btn-up ." "btn-left center btn-right" ". btn-down .";
+    grid-template-columns: 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px;
+
+    &__upButton {
+        grid-area: btn-up;
+    }
+
+    &__leftButton {
+        grid-area: btn-left;
+        transform: rotate(-90deg);
+    }
+
+    &__center {
+        width: 40px;
+        height: 40px;
+        grid-area: center;
+        box-sizing: border-box;
+        background-color: var(--second-color);
+        border: 1px solid var(--controls-border-color);
+    }
+
+    &__rightButton {
+        grid-area: btn-right;
+        transform: rotate(90deg);
+    }
+
+    &__downButton {
+        grid-area: btn-down;
+        transform: rotate(180deg);
+    }
+}
