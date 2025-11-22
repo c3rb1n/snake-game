@@ -6,9 +6,9 @@ import Levels from './Levels/Levels';
 const Screen = () => {
     return (
         <div className={styles.screen}>
-            {/* <GameField /> */}
+            <GameField />
             {/* <HighScores /> */}
-            <Levels />
+            {/* <Levels /> */}
         </div>
     );
 };
