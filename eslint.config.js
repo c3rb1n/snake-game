@@ -75,6 +75,7 @@ export default defineConfig([
         plugins: {'@stylistic': stylistic},
         rules: {
             '@stylistic/jsx-indent-props': ['error', 'first'],
+            '@stylistic/multiline-ternary': 'off',
             '@stylistic/arrow-parens': ['error', 'as-needed'],
             '@stylistic/space-before-function-paren': ['error', 'never'],
             '@stylistic/block-spacing': ['error', 'never'],
