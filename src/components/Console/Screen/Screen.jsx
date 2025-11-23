@@ -3,12 +3,11 @@ import GameField from './GameField/GameField';
 import HighScores from './HighScores/HighScores';
 import Levels from './Levels/Levels';
 
-const Screen = () => {
+const Screen = ({level, setLevel}) => {
     return (
         <div className={styles.screen}>
-            <GameField />
+            {level ? <GameField /> : <Levels setLevel={setLevel} />}
             {/* <HighScores /> */}
-            {/* <Levels /> */}
         </div>
     );
 };

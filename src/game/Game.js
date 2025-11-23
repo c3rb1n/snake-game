@@ -104,16 +104,20 @@ class Game {
         this.ctx.textBaseline = 'middle';
         this.ctx.textAlign = 'center';
         this.ctx.fillText('Конец игры', this.width / 2, this.height / 2);
+
+        document.querySelector('body').removeEventListener('keydown', this.keydownHandler);
     }
 
-    start() {
-        document.querySelector('body').addEventListener('keydown', event => {
-            const newDirection = this.directions[event.key];
+    keydownHandler = event => {
+        const newDirection = this.directions[event.key];
 
-            if (newDirection) {
-                this.snake.setDirection(newDirection);
-            }
-        });
+        if (newDirection) {
+            this.snake.setDirection(newDirection);
+        }
+    };
+
+    start() {
+        document.querySelector('body').addEventListener('keydown', this.keydownHandler);
 
         const intervalId = setInterval(() => {
             this.ctx.clearRect(0, 0, this.width, this.height);
