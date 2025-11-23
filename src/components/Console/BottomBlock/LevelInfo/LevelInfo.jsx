@@ -1,17 +1,18 @@
 import styles from './LevelInfo.module.scss';
 import LevelInfoItem from './LevelInfoItem/LevelInfoItem';
 
-const LevelInfo = () => {
+const LevelInfo = ({level}) => {
+    const selectedLevel = level;
     const levels = [
-        {id: 1, text: 'Легко', selected: false},
-        {id: 2, text: 'Средне', selected: true},
-        {id: 3, text: 'Сложно', selected: false}
+        {id: 1, text: 'Легко'},
+        {id: 2, text: 'Средне'},
+        {id: 3, text: 'Сложно'}
     ];
 
     return (
         <div className={styles.levelInfo}>
             <div className={styles.levelInfo__inner}>
-                {levels.map(({id, text, selected}) => <LevelInfoItem key={id} text={text} selected={selected} />)}
+                {levels.map(({id, text}) => <LevelInfoItem key={id} text={text} selected={selectedLevel === text} />)}
             </div>
         </div>
     );
