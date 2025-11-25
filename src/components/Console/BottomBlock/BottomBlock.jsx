@@ -3,12 +3,12 @@ import Controls from './Controls/Controls';
 import AdditionalButtons from './AdditionalButtons/AdditionalButtons';
 import LevelInfo from './LevelInfo/LevelInfo';
 
-const BottomBlock = ({level}) => {
+const BottomBlock = ({currentLevelId, controlsHandler, additionalButtonsHandler}) => {
     return (
         <div className={styles.bottomBlock}>
-            <Controls />
-            <AdditionalButtons />
-            <LevelInfo level={level} />
+            <Controls controlsHandler={controlsHandler} />
+            <AdditionalButtons additionalButtonsHandler={additionalButtonsHandler} />
+            <LevelInfo currentLevelId={currentLevelId} />
         </div>
     );
 };

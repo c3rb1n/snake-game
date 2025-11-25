@@ -3,10 +3,19 @@ import GameField from './GameField/GameField';
 import HighScores from './HighScores/HighScores';
 import Levels from './Levels/Levels';
 
-const Screen = ({level, setLevel}) => {
+const Screen = ({currentLevelId, setCurrentLevelId, mode, setMode}) => {
     return (
         <div className={styles.screen}>
-            {level ? <GameField /> : <Levels setLevel={setLevel} />}
+            {
+                mode === 'СТАРТ' ?
+                <GameField /> : (
+                <Levels
+                    currentLevelId={currentLevelId}
+                    setCurrentLevelId={setCurrentLevelId}
+                    setMode={setMode}
+                />
+              )
+            }
             {/* <HighScores /> */}
         </div>
     );
