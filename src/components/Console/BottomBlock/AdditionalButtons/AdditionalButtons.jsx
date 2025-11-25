@@ -1,17 +1,25 @@
 import styles from './AdditionalButtons.module.scss';
 import Button from '../../../common/Button/Button';
 
-const AdditionalButtons = () => {
+const AdditionalButtons = ({additionalButtonsHandler}) => {
     const btns = [
-        {text: 'СТАРТ'},
-        {text: 'ПАУЗА'},
-        {text: 'ИНФО'},
-        {text: 'ЛИДЕРЫ'}
+        {id: 1, name: 'СТАРТ'},
+        {id: 2, name: 'ПАУЗА'},
+        {id: 3, name: 'ИНФО'},
+        {id: 4, name: 'ЛИДЕРЫ'}
     ];
 
     return (
         <div className={styles.additionalButtons}>
-            {btns.map(({text}, i) => <Button cn={styles.additionalButtons__button} key={i}>{text}</Button>)}
+            {btns.map(({id, name}) => (
+                <Button
+                    cn={styles.additionalButtons__button}
+                    key={id}
+                    clickHandler={() => additionalButtonsHandler(name)}
+                >
+                    {name}
+                </Button>
+            ))}
         </div>
     );
 };

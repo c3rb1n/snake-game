@@ -1,8 +1,8 @@
 import styles from './Button.module.scss';
 
-const Button = ({cn, children}) => {
+const Button = ({cn, clickHandler, children}) => {
     return (
-        <button className={`${styles.button} ${cn ? cn : ''}`}>{children}</button>
+        <div onClick={clickHandler} className={`${styles.button} ${cn ? cn : ''}`}>{children}</div>
     );
 };
 
