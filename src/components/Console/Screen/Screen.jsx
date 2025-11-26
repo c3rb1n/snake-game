@@ -8,7 +8,7 @@ const Screen = ({currentLevelId, setCurrentLevelId, mode, setMode}) => {
         <div className={styles.screen}>
             {
                 mode === 'СТАРТ' ?
-                <GameField /> :
+                <GameField currentLevelId={currentLevelId} /> :
                 mode === 'ЛИДЕРЫ' ?
                 <Leaders /> :
                 mode === 'ИНФО' ?
