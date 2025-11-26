@@ -1,7 +1,7 @@
-import styles from './HighScoresList.module.scss';
-import HighScoresItem from './HighScoresItem/HighScoresItem';
+import styles from './LeadersList.module.scss';
+import LeadersListItem from './LeadersListItem/LeadersListItem';
 
-const HighScoresList = () => {
+const LeadersList = () => {
     const scores = [
         {id: 1, scores: 25310, name: 'AAA', lvl: 'ЛЕГКО'},
         {id: 2, scores: 12200, name: 'BBB', lvl: 'СЛОЖНО'},
@@ -18,10 +18,10 @@ const HighScoresList = () => {
     return (
         <ol className={styles.list}>
             {scores.map(({id, scores, name, lvl}) => (
-                <HighScoresItem key={id} scores={scores} name={name} lvl={lvl} />
+                <LeadersListItem key={id} scores={scores} name={name} lvl={lvl} />
             ))}
         </ol>
     );
 };
 
-export default HighScoresList;
+export default LeadersList;
