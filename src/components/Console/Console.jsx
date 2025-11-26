@@ -24,9 +24,11 @@ const Console = () => {
     };
 
     const additionalButtonsHandler = btnName => {
-        if (mode !== 'УРОВНИ' && btnName === 'СТАРТ') {
+        if (mode === 'СТАРТ' && btnName === 'ПАУЗА') {
+            setMode(btnName);
+        } else if (mode !== 'УРОВНИ' && btnName === 'СТАРТ') {
             setMode('УРОВНИ');
-        } else {
+        } else if (btnName !== 'ПАУЗА') {
             setMode(btnName);
         }
     };
