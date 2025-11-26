@@ -1,6 +1,6 @@
-import styles from './HighScoresItem.module.scss';
+import styles from './LeadersListItem.module.scss';
 
-const HighScoresItem = ({scores, name, lvl}) => (
+const LeadersListItem = ({scores, name, lvl}) => (
     <li className={styles.item}>
         <div className={styles.item__scoresBlock}>
             <span className={styles.item__scores}>{scores}</span>
@@ -10,4 +10,4 @@ const HighScoresItem = ({scores, name, lvl}) => (
     </li>
 );
 
-export default HighScoresItem;
+export default LeadersListItem;

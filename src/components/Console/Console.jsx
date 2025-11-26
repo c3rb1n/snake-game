@@ -14,8 +14,6 @@ const Console = () => {
             setCurrentLevelId(i => i + 1 > 3 ? 1 : i + 1);
         } else if (btnName === 'left') {
             setCurrentLevelId(i => i - 1 < 1 ? 3 : i - 1);
-        } else if (btnName === 'СТАРТ') {
-            setMode('СТАРТ');
         }
     };
 
@@ -26,8 +24,10 @@ const Console = () => {
     };
 
     const additionalButtonsHandler = btnName => {
-        if (mode === 'УРОВНИ' && btnName === 'СТАРТ') {
-            levelsMode(btnName);
+        if (mode !== 'УРОВНИ' && btnName === 'СТАРТ') {
+            setMode('УРОВНИ');
+        } else {
+            setMode(btnName);
         }
     };
 
