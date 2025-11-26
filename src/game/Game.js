@@ -3,7 +3,18 @@ import Snake from './snake/Snake';
 import SnakeSegment from './snake/SnakeSegment';
 
 class Game {
-    constructor(canvas) {
+    constructor(canvas, currentLevelId) {
+        this.directions = {
+            ArrowUp: 'up',
+            ArrowRight: 'right',
+            ArrowDown: 'down',
+            ArrowLeft: 'left',
+        };
+        this.levelSettings = {
+            1: {scoresModifier: 1, speedModifier: 100},
+            2: {scoresModifier: 5, speedModifier: 70},
+            3: {scoresModifier: 10, speedModifier: 50}
+        };
         this.ctx = canvas.getContext('2d');
         this.width = canvas.width;
         this.height = canvas.height;
@@ -11,12 +22,8 @@ class Game {
         this.widthInBlocks = this.width / this.blockSize;
         this.heightInBlocks = this.height / this.blockSize;
         this.scores = 0;
-        this.directions = {
-            ArrowUp: 'up',
-            ArrowRight: 'right',
-            ArrowDown: 'down',
-            ArrowLeft: 'left',
-        };
+        this.scoresModifier = this.levelSettings[currentLevelId].scoresModifier;
+        this.speedModifier = this.levelSettings[currentLevelId].speedModifier;
 
         this.ctx.fillStyle = '#292E40';
         this.ctx.strokeStyle = '#292E40';
@@ -55,7 +62,7 @@ class Game {
         this.snake.segments.unshift(newHead);
 
         if (newHead.equal(this.apple)) {
-            this.scores++;
+            this.scores += this.scoresModifier;
             let i = 0;
 
             while (i < this.snake.segments.length) {
@@ -131,7 +138,7 @@ class Game {
 
             this.snake.draw();
             this.apple.draw();
-        }, 100);
+        }, this.speedModifier);
     }
 }
 
