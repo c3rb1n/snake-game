@@ -7,6 +7,7 @@ import BottomBlock from './BottomBlock/BottomBlock';
 
 const Console = () => {
     const [currentLevelId, setCurrentLevelId] = useState(1);
+    const [selectedInfoMarkerId, setSelectedInfoMarkerId] = useState(1);
     const [mode, setMode] = useState('УРОВНИ');
 
     const levelsMode = btnName => {
@@ -17,9 +18,19 @@ const Console = () => {
         }
     };
 
+    const infoMode = btnName => {
+        if (btnName === 'right') {
+            setSelectedInfoMarkerId(i => i + 1 > 3 ? 1 : i + 1);
+        } else if (btnName === 'left') {
+            setSelectedInfoMarkerId(i => i - 1 < 1 ? 3 : i - 1);
+        }
+    };
+
     const controlsHandler = btnName => {
         if (mode === 'УРОВНИ') {
             levelsMode(btnName);
+        } else if (mode === 'ИНФО') {
+            infoMode(btnName);
         }
     };
 
@@ -44,6 +55,8 @@ const Console = () => {
                         setCurrentLevelId={setCurrentLevelId}
                         mode={mode}
                         setMode={setMode}
+                        selectedInfoMarkerId={selectedInfoMarkerId}
+                        setSelectedInfoMarkerId={setSelectedInfoMarkerId}
                     />
                 </div>
                 <BottomBlock

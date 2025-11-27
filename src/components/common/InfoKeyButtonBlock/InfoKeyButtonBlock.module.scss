@@ -1,0 +1,14 @@
+.btn {
+border: 1px solid var(--screen-main-color);
+    padding: 4px 4px 1px 6px;  
+
+    &_additional {
+        border-radius: 20px;
+    }
+}
+
+.keyboardKey {
+    padding: 5px 5px 2px 7px;
+    background-color: var(--screen-main-color);
+    color:var(--screen-bg-color);
+}
