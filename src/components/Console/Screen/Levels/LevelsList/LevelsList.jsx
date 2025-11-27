@@ -11,9 +11,9 @@ const LevelsList = ({currentLevelId, setCurrentLevelId, setMode}) => {
 
     useEffect(() => {
         const keydownHandler = event => {
-            if (event.key === 'ArrowRight') {
+            if (event.key === 'd' || event.key === 'D') {
                 setCurrentLevelId(i => i + 1 > 3 ? 1 : i + 1);
-            } else if (event.key === 'ArrowLeft') {
+            } else if (event.key === 'a' || event.key === 'A') {
                 setCurrentLevelId(i => i - 1 < 1 ? 3 : i - 1);
             } else if (event.key === 'Enter') {
                 setMode('СТАРТ');
