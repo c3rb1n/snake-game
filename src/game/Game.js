@@ -5,10 +5,10 @@ import SnakeSegment from './snake/SnakeSegment';
 class Game {
     constructor(canvas, currentLevelId) {
         this.directions = {
-            ArrowUp: 'up',
-            ArrowRight: 'right',
-            ArrowDown: 'down',
-            ArrowLeft: 'left',
+            w: 'up', W: 'up',
+            d: 'right', D: 'right',
+            s: 'down', S: 'down',
+            a: 'left', A: 'left',
         };
         this.levelSettings = {
             1: {scoresModifier: 1, speedModifier: 100},
