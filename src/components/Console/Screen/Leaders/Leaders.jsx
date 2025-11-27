@@ -5,7 +5,7 @@ const Leaders = () => {
     return (
         <div className={styles.leaders}>
             <div className={styles.leaders__inner}>
-                <h2 className={styles.leaders__title}>ТАБЛИЦА РЕКОРДОВ</h2>
+                <h2 className={styles.leaders__title}>ТАБЛИЦА ЛИДЕРОВ</h2>
                 <LeadersList />
             </div>
         </div>
