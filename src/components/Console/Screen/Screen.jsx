@@ -4,12 +4,20 @@ import Leaders from './Leaders/Leaders';
 import Info from './Info/Info';
 import Levels from './Levels/Levels';
 
-const Screen = ({currentLevelId, setCurrentLevelId, mode, setMode, selectedInfoMarkerId, setSelectedInfoMarkerId}) => {
+const Screen = ({
+    currentLevelId,
+    setCurrentLevelId,
+    mode,
+    setMode,
+    selectedInfoMarkerId,
+    setSelectedInfoMarkerId,
+    setGameBtnHandler
+}) => {
     return (
         <div className={styles.screen}>
             {
                 mode === 'СТАРТ' ?
-                <GameField currentLevelId={currentLevelId} /> :
+                <GameField currentLevelId={currentLevelId} setGameBtnHandler={setGameBtnHandler} /> :
                 mode === 'ЛИДЕРЫ' ?
                 <Leaders /> :
                 mode === 'ИНФО' ?
