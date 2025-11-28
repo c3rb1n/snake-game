@@ -115,6 +115,10 @@ class Game {
         document.querySelector('body').removeEventListener('keydown', this.keydownHandler);
     }
 
+    btnHandler(btnName) {
+        this.snake.setDirection(btnName);
+    };
+
     keydownHandler = event => {
         const newDirection = this.directions[event.key];
 
@@ -139,7 +143,9 @@ class Game {
             this.snake.draw();
             this.apple.draw();
         }, this.speedModifier);
-    }
+
+        return this.btnHandler.bind(this);
+    };
 }
 
 export default Game;

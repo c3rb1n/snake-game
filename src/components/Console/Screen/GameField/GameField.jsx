@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import Game from '../../../../game/Game';
 
-const GameField = ({currentLevelId}) => {
+const GameField = ({currentLevelId, setGameBtnHandler}) => {
     useEffect(() => {
         const customFont = new FontFace('PressStart2P', `url(/fonts/PressStart2P-Regular.woff2)`);
 
@@ -11,7 +11,9 @@ const GameField = ({currentLevelId}) => {
 
             document.fonts.add(font);
 
-            game.start();
+            const gameBtnHandler = game.start();
+
+            setGameBtnHandler(gameBtnHandler);
         });
     }, []);
 
